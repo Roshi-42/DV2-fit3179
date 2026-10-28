@@ -1,0 +1,236 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json","description": "FrogID occurrence record hotspots across Australia.",
+  "width": "container","height": 460,
+
+  "projection": {
+    "type": "mercator",
+    "center": [134, -27],
+    "scale": 600
+  },
+
+  "layer": [
+  
+
+{
+  "data": {
+   "url": "data/states.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "mark": {
+    "type": "geoshape",
+    "fill": "#E5F0E7",
+    "stroke": "#315B50",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "properties.STATE_NAME",
+        "type": "nominal",
+        "title": "State"
+      }
+    ]
+  }
+}
+,{
+    "data": {"url": "data/grid_counts.csv"
+    },
+    "mark": {
+      "type": "circle"
+    },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "records",
+          "type": "quantitative",
+          "title": "Records per 1° cell",
+          "scale": {
+            "type": "linear",
+            "domainMin": 0,
+            "range": [9, 950]
+          },
+          "legend": {
+            "orient": "right"
+            
+          }
+        },
+        "tooltip": [
+          {
+            "field": "latitude",
+            "type": "quantitative",
+            "title": "Grid centre latitude",
+            "format": ".1f"
+          },
+          {
+            "field": "longitude",
+            "type": "quantitative",
+            "title": "Grid centre longitude",
+            "format": ".1f"
+          },
+          {
+            "field": "records",
+            "type": "quantitative",
+            "title": "Occurrence records",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "state": "WA",
+            "lon": 121,
+            "lat": -26
+          },
+          {
+            "state": "NT",
+            "lon": 133,
+            "lat": -20
+          },
+          {
+            "state": "SA",
+            "lon": 135,
+            "lat": -30
+          },
+          {
+            "state": "QLD",
+            "lon": 144,
+            "lat": -22
+          },
+          {
+            "state": "NSW",
+            "lon": 147,
+            "lat": -32
+          },
+          {
+            "state": "VIC",
+            "lon": 144,
+            "lat": -37
+          },
+          {
+            "state": "TAS",
+            "lon": 147,
+            "lat": -42
+          },
+          {
+            "state": "ACT",
+            "lon": 150.3,
+            "lat": -35.6
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#FFFFFF",
+        "opacity": 1,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "state": "WA",
+            "lon": 121,
+            "lat": -26
+          },
+          {
+            "state": "NT",
+            "lon": 133,
+            "lat": -20
+          },
+          {
+            "state": "SA",
+            "lon": 135,
+            "lat": -30
+          },
+          {
+            "state": "QLD",
+            "lon": 144,
+            "lat": -22
+          },
+          {
+            "state": "NSW",
+            "lon": 147,
+            "lat": -32
+          },
+          {
+            "state": "VIC",
+            "lon": 144,
+            "lat": -37
+          },
+          {
+            "state": "TAS",
+            "lon": 147,
+            "lat": -42
+          },
+          {
+            "state": "ACT",
+            "lon": 150.3,
+            "lat": -35.6
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#173D35",
+        "opacity": 0.9,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "#FFFFFF",
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial"
+  }
+}

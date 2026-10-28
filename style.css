@@ -1,0 +1,1080 @@
+
+:root {
+  --page-green: #E4EFE5;
+  --story-green: #EDF5EE;
+  --card-green: #F7FBF7;
+  --guide-green: #E8F2EA;
+  --forest: #173D35;
+  --forest-deep: #10362F;
+  --moss: #32877E;
+  --leaf: #73B69B;
+  --text-main: #203E36;
+  --text-muted: #4C685E;
+  --text-light: #637D70;
+  --border-green: #CCDED0;
+  --shadow: 0 6px 22px rgba(20, 62, 49, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {margin: 0;background: var(--page-green);
+  color: var(--text-main);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #216F64;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--forest-deep);
+}
+
+a:focus-visible,
+select:focus-visible {
+  outline: 3px solid #68A99C;
+  outline-offset: 3px;
+}
+
+
+.hero {
+  position: relative;isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(125deg, #10362F 0%, #194C40 60%, #255F4C 100%);
+  color: #FFFFFF;
+  text-align: left;
+  padding: 84px max(62px, calc(50vw - 488px)) 86px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 330px;
+  height: 330px;right: -85px;top: -135px;
+  border: 2px solid rgba(194, 230, 194, 0.16);
+  border-radius: 50%;
+  box-shadow: 0 0 0 40px rgba(194, 230, 194, 0.035),
+              0 0 0 85px rgba(194, 230, 194, 0.028);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 260px;
+  height: 260px;
+  left: -110px;
+  bottom: -170px;
+  border: 2px solid rgba(194, 230, 194, 0.11);
+  border-radius: 50%;
+  box-shadow: 0 0 0 38px rgba(194, 230, 194, 0.035);
+  pointer-events: none;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #B9DFCA;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 16px 0 18px;
+  color: #FFFFFF;
+  font-size: clamp(38px, 5vw, 54px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  max-width: 680px;
+  margin: 0;
+  color: #DBEEE1;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 24px 55px;
+}
+
+.intro,
+.story {
+  max-width: 900px;
+  margin: 44px 0;
+  padding: 24px 38px;
+  text-align: left;
+  background: var(--story-green);
+  border: 1px solid var(--border-green);
+  border-left: 5px solid var(--moss);
+  border-radius: 16px;
+}
+
+.intro p,
+.story p {
+  max-width: 68ch;
+  font-size: 17px;
+  line-height: 1.78;
+  margin: 0 0 14px;
+}
+
+.intro p:last-child,
+.story p:last-child {
+  margin-bottom: 0;
+}
+
+
+h2,
+h3 {
+  color: var(--forest);
+  line-height: 1.35;
+}
+
+.intro h2 {
+  margin: 0 0 17px;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.story h2 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.chart-card > h2,
+.species-section > h2,
+.seasonal-story > h2 {
+  margin: 0 0 14px;
+  color: var(--forest);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.33;
+}
+
+.chart-card h3,
+.species-panel h3,
+.seasonal-panel h3 {
+  margin: 0 0 10px;
+  color: var(--forest);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.chart-card {
+  position: relative;
+  min-width: 0;
+  margin: 43px 0;
+  padding: 38px;
+  text-align: left;
+  background: var(--card-green);
+  border: 1px solid var(--border-green);
+  border-top: 3px solid var(--leaf);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.chart-description {
+  max-width: 72ch;
+  margin: 0 0 27px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.chart-note {
+  margin: 22px 0 10px;
+  padding: 10px 13px;
+  background: var(--guide-green);
+  border-left: 3px solid #8FB9A1;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+.source {
+  margin: 12px 0 0;
+  color: var(--text-light);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.reading-guide {
+  margin: 16px 0 22px;
+  padding: 12px 16px;
+  background: var(--guide-green);
+  border-left: 3px solid var(--moss);
+  border-radius: 0 10px 10px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.reading-guide h4 {
+  margin: 0 0 5px;
+  color: var(--forest);
+  font-size: 13px;
+}
+
+.reading-guide p {
+  margin: 0;
+}
+
+
+.vega-embed {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+.vega-bindings {
+  text-align: left;
+}
+
+.vega-embed svg {
+  max-width: 100%;
+  height: auto;
+}
+
+#frog-richness-map,
+#state-frog-map,
+#species-state-heatmap,
+#top10-frog-chart,
+#frog-trend-chart,
+#frog-species-streamgraph,
+#frog-state-seasons,
+#frog-hotspot-map,
+#frog-dot-density-map,
+#frog-latitude-boxplot,
+#frog-recording-clock,
+#frog-hourly-ridgeline {
+  width: 100%;
+  min-width: 0;
+}
+
+#frog-richness-map {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+#state-frog-map {
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.species-section {
+  width: 100%;
+  margin: 46px 0;
+  padding: 0;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.species-section > .chart-description {
+  max-width: 850px;
+}
+
+.species-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.species-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 24px 18px;
+  background: var(--card-green);
+  border: 1px solid var(--border-green);
+  border-top: 3px solid var(--leaf);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+.species-panel h3 {
+  font-size: 18px;
+  margin: 0 0 11px;
+}
+
+.species-panel > p {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+#species-state-heatmap,
+#top10-frog-chart {
+  width: 100%;
+  min-width: 0;
+}
+
+.species-panel > .chart-note {
+  margin: auto 0 10px;
+  font-size: 12.5px;
+}
+
+.species-panel > .source {
+  margin: 12px 0 0;
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+#species-state-heatmap .vega-embed,
+#top10-frog-chart .vega-embed {
+  max-width: 100%;
+  width: 100%;
+  padding-right: 0;
+}
+
+.species-section > .chart-note,
+.species-section > .source {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#frog-trend-chart {
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.seasonal-story {
+  padding: 34px;
+}
+
+.seasonal-panel {
+  margin-top: 27px;
+}
+
+.seasonal-panel h3 {
+  font-size: 18px;
+}
+
+.seasonal-panel > p {
+  margin: 0 0 15px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.seasonal-transition {
+  margin: 30px 0 27px;
+  padding: 14px 18px;
+  background: var(--guide-green);
+  border-left: 3px solid var(--moss);
+  border-radius: 10px;
+}
+
+.seasonal-transition h2 {
+  margin: 0 0 6px;
+  color: var(--forest);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.seasonal-transition p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.seasonal-story > .seasonal-panel:first-child {
+  margin-top: 0;
+}
+
+.seasonal-notes {
+  margin: -18px 0 43px;
+  padding: 20px 24px;
+  background: var(--guide-green);
+  border: 1px solid var(--border-green);
+  border-left: 4px solid var(--moss);
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.seasonal-notes h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.seasonal-notes p {
+  margin: 0;
+}
+
+#frog-species-streamgraph,
+#frog-state-seasons {
+  margin: 20px 0;
+}
+
+
+#frog-species-streamgraph select,
+#frog-state-seasons select,
+#frog-recording-clock select,
+#frog-hourly-ridgeline select {
+  max-width: 100%;
+  margin: 6px 4px;
+  padding: 8px 11px;
+  background: #FFFFFF;
+  border: 1px solid #A7C5B2;
+  border-radius: 8px;
+  color: var(--forest);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+
+#frog-hotspot-map {
+  min-height: 470px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#frog-dot-density-map {
+  margin: 15px 0;
+}
+
+#frog-latitude-boxplot {
+  margin: 16px 0;
+}
+
+.recording-clock-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+  gap: 26px;
+  align-items: center;
+}
+
+#frog-recording-clock .vega-embed {
+  display: block;
+  width: 100%;
+  padding-right: 0;
+}
+
+#frog-recording-clock .vega-bindings {
+  margin-top: 12px;
+}
+
+#frog-recording-clock .vega-bind {
+  font-size: 12px;
+}
+
+.recording-clock-guide {
+  padding: 20px 22px;
+  background: var(--guide-green);
+  border: 1px solid var(--border-green);
+  border-radius: 13px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.recording-clock-guide h3 {
+  margin: 0 0 12px;
+  color: var(--forest);
+  font-size: 17px;
+}
+
+.recording-clock-guide p {
+  margin: 0 0 12px;
+}
+
+.recording-clock-guide p:last-child {
+  margin-bottom: 0;
+}
+
+#frog-hourly-ridgeline {
+  margin: 22px 0;
+}
+
+#frog-hourly-ridgeline .vega-embed {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0;
+}
+#frog-hourly-ridgeline .vega-bindings {
+  margin-top: 13px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+footer {
+  padding: 34px 20px;
+  background: var(--forest-deep);
+  color: #E4F1E6;
+  text-align: left;
+
+  padding-left: max(62px, calc(50vw - 488px));
+  padding-right: max(24px, calc(50vw - 526px));
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #BAE0CD;
+}
+
+@media (max-width: 850px) {
+  main {
+    padding: 25px 18px 42px;
+  }
+
+  .hero {
+    padding-left: 56px;
+    padding-right: 18px;
+  }
+
+  footer {
+    padding-left: 56px;
+    padding-right: 18px;
+  }
+
+  .species-comparison {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .species-panel {
+    padding: 24px 20px;
+  }
+
+  .recording-clock-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #frog-recording-clock {
+    max-width: 440px;
+    margin: 0;
+  }
+}
+@media (max-width: 700px) {
+  body {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 49px 27px 53px;
+  }
+
+  footer {
+    padding-left: 27px;
+    padding-right: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 7vw, 39px);
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  main {
+    padding: 18px 12px 30px;
+  }
+
+  .intro,
+  .story {
+    margin: 24px 0;
+    padding: 19px 15px;
+  }
+
+  .intro h2 {
+    font-size: 23px;
+  }
+
+  .story h2 {
+    font-size: 19px;
+  }
+
+  .chart-card {
+    margin: 22px 0;
+    padding: 21px 15px;
+    border-radius: 14px;
+  }
+
+  .seasonal-story {
+    padding: 21px 15px;
+  }
+
+  .species-section {
+    margin: 25px 0;
+  }
+
+  .species-panel {
+    padding: 20px 15px;
+  }
+
+  .chart-card > h2,.species-section > h2,
+  .seasonal-story > h2 {
+    font-size: 21px;
+  }
+
+  .chart-card h3,
+  .species-panel h3,
+  .seasonal-panel h3 {
+    font-size: 16px;
+  }
+
+  .chart-description {
+    font-size: 14px;
+  }
+
+  .seasonal-transition {
+    margin: 25px 0;
+    padding: 13px 14px;
+  }
+
+  .recording-clock-guide {
+    padding: 16px;
+  }
+
+  #frog-richness-map {
+    min-height: 280px;
+  }
+
+  #state-frog-map {
+    min-height: 300px;
+  }
+
+  #frog-trend-chart {
+    min-height: 300px;
+  }
+
+  #frog-hotspot-map {
+    min-height: 350px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+.chart-card > h2,
+.species-section > h2,
+.seasonal-story > h2 {
+  max-width: 36ch;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+.intro h2,
+.story h2,
+.species-panel h3,
+.seasonal-panel h3 {
+  text-wrap: balance;
+}
+
+
+.species-panel > h3 + p,
+.seasonal-panel > h3 + p {
+  margin-top: 0;
+}
+.chart-note strong,
+.reading-guide strong,
+.recording-clock-guide strong {
+  color: var(--forest);
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .chart-card > h2,
+  .species-section > h2,
+  .seasonal-story > h2 {
+    font-size: 22px;
+    max-width: 100%;
+  }
+  .intro h2 { font-size: 24px; }
+  .story h2 { font-size: 21px; }
+  .chart-card h3,
+  .species-panel h3,
+  .seasonal-panel h3 { font-size: 17px; }
+  .chart-note { font-size: 12px; }
+}
+
+
+.hero .eyebrow,
+.hero h1,
+.hero .subtitle,
+.intro, .story,
+.chart-card,
+.species-section,
+.seasonal-panel,
+.seasonal-transition,
+.recording-clock-guide,
+.reading-guide,
+footer {
+  text-align: left;
+}
+
+.species-section > h2,
+.species-section > .chart-description {
+  margin-left: 38px;
+  margin-right: 38px;
+}
+.species-section > .chart-note,
+.species-section > .source {
+  margin-left: 38px;
+  margin-right: 38px;
+}
+
+
+.chart-card .vega-embed,
+.species-panel .vega-embed,
+.seasonal-panel .vega-embed {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  .species-section > h2,
+  .species-section > .chart-description,
+  .species-section > .chart-note,
+  .species-section > .source {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+.hero-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: grid;grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 44px;align-items: center;
+  text-align: left;
+}
+.hero-inner .hero-copy { min-width: 0; }
+.hero-inner .subtitle { margin: 0; max-width: 550px; }
+.hero-visual { margin: 0; min-width: 0; }
+.hero-visual img {
+  width: 100%;
+  height: 275px;
+  display: block;
+  object-fit: cover;
+  object-position: 48% 46%;
+  border-radius: 26px 75px 26px 75px;
+  border: 3px solid rgba(218, 244, 217, 0.45);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, .18);
+}
+.hero-visual figcaption {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #d7e9d9;
+  margin-top: 9px;
+  text-align: left;
+}
+
+.frog-intro-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 250px);
+  gap: 24px;
+  align-items: center;
+  margin: 6px 0 26px;
+}
+.frog-intro-row > .chart-description {
+  margin: 0;
+  max-width: 660px;
+}
+.frog-feature { margin: 0; min-width: 0; }
+.frog-feature img {
+  display: block;
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid #c9dccd;
+}
+.frog-feature figcaption {
+  font-size: 11px;
+  line-height: 1.55;
+  color: #60776b;
+  margin-top: 7px;
+  text-align: left;
+}
+
+.chapter-bridge .frog-feature {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.chapter-bridge .frog-feature img {
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .hero-inner,
+  .frog-intro-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .hero-visual { width: min(100%, 430px); }
+  .hero-visual img { height: 210px; }
+  .frog-feature { width: min(100%, 360px); }
+  .frog-feature img { height: 150px; }
+}
+
+
+.story-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 18px 0 38px;
+  padding: 16px 20px;
+  background: #f7fbf7;
+  border: 1px solid var(--border-green);
+  border-radius: 12px;
+}
+
+.story-nav span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-right: 12px;
+}
+
+.story-nav a {
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid #c5d9cb;
+  border-radius: 999px;
+  padding: 5px 12px;
+  background: white;
+}
+
+.story-nav a:hover,
+.story-nav a:focus-visible {
+  background: #e4f0e7;
+}
+
+.chapter-bridge {
+  max-width: 900px;
+  margin: 58px 0 28px;
+  border-left: 5px solid var(--moss);
+  background: linear-gradient(115deg, #edf5ee, #f8fbf8);
+}
+
+.chapter-label {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: #28786b;
+  margin: 0 0 8px !important;
+}
+
+.insight {
+  margin: 18px 0 20px;
+  padding: 16px 18px;
+  background: #edf7f1;
+  border: 1px solid #c7dfd0;
+  border-radius: 12px;
+  max-width: 850px;
+}
+
+.insight-kicker {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #28786b;
+  margin-bottom: 3px;
+}
+
+.insight h4 {
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--forest);
+  margin: 0 0 5px;
+}
+.insight p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.species-panel .insight {
+  margin-top: 18px;
+}
+
+.conclusion {
+  background: linear-gradient(145deg, #f7fcf8, #e8f4eb);
+  border: 1px solid #b8d6c2;
+  border-top: 5px solid var(--moss);
+  padding: 42px;
+  border-radius: 19px;
+  margin: 70px 0 20px;
+  box-shadow: var(--shadow);
+}
+
+.conclusion h2 {
+  font-size: clamp(24px, 3.6vw, 24px);
+  margin: 0 0 16px;
+}
+
+.conclusion-lead {
+  max-width: 70ch;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--forest);
+}
+
+.conclusion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.conclusion-grid > div {
+  background: #fff;
+  border: 1px solid var(--border-green);
+  border-radius: 12px;
+  padding: 18px;
+}
+.conclusion h3 {
+  font-size: 17px;
+  margin: 0 0 9px;
+}
+.conclusion p {
+  line-height: 1.72;
+}
+.conclusion-grid p {
+  font-size: 13px;
+  margin: 0;
+}
+.conclusion-caution {
+  padding: 18px 20px;
+  border-left: 4px solid #619b82;
+  background: #e0efe5;
+  border-radius: 0 10px 10px 0;
+  margin: 22px 0 30px;
+  line-height: 1.7;
+}
+
+.final-line {
+  font-weight: 700;
+  color: var(--forest);
+  font-size: 17px;
+  margin-top: 22px;
+}
+
+@media (max-width: 760px) {
+  .conclusion {
+    padding: 24px 17px;
+  }
+
+  .conclusion-grid {
+    grid-template-columns: 1fr;
+  }
+.story-nav {
+    padding: 12px;
+  }
+  .chapter-bridge {
+    margin-top: 35px;
+  }
+  .insight {
+    padding: 13px;
+  }
+}
+
+@media print {
+  .story-nav {
+    display: none;
+  }
+  .chart-card,
+  .species-panel,
+  .conclusion {
+    break-inside: avoid;
+  }
+
+  body {
+    background: #fff;
+  }
+}
+
+
+
+
+.references-section {
+  background: #F7FBF7;
+  padding: 32px 38px;
+  margin: 45px auto;
+  border: 1px solid #CFDFD0;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.references-section h2 {
+  color: #173D35;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.references-section h3 {
+  color: #315B50;
+  font-size: 17px;
+  margin: 26px 0 12px;
+}
+
+.references-section p {
+  color: #526E65;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 8px 0;
+}
+
+.references-section a {
+  color: #217F75;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
